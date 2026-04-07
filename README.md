@@ -1,4 +1,4 @@
-# TechTrust (ConsertaHub) 🛠️
+# TechTrust 🛠️
 
 > **Conectando você aos melhores profissionais de serviços técnicos.**
 
