@@ -43,7 +43,9 @@ Siga os passos abaixo para rodar o projeto localmente na sua máquina.
    git clone [https://github.com/seu-usuario/techtrust.git](https://github.com/seu-usuario/techtrust.git)
 
 👩‍💻 Autores
-Nicolly - Desenvolvimento e Análise - Nicks0022
+
+*Nicolly - Desenvolvimento e Análise - Nicks0022
 
 📄 Licença
-Este projeto é de cunho acadêmico e foi desenvolvido para fins educacionais.
+
+*Este projeto é de cunho acadêmico e foi desenvolvido para fins educacionais.
