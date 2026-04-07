@@ -2,11 +2,11 @@
 
 > **Conectando você aos melhores profissionais de serviços técnicos.**
 
-Este projeto é um marketplace de serviços técnicos desenvolvido como requisito para o Projeto Integrado Multidisciplinar (PIM III) do curso de Análise e Desenvolvimento de Sistemas da Universidade Paulista (UNIP).
+Este projeto é um marketplace de serviços técnicos desenvolvido como requisito para o Projeto Integrado Multidisciplinar (PIM II) do curso de Análise e Desenvolvimento de Sistemas da Universidade Paulista (UNIP).
 
 ## 📋 Sobre o Projeto
 
-O TechTrust (também conhecido como ConsertaHub) é uma plataforma que visa facilitar o encontro entre clientes que precisam de reparos ou serviços técnicos e profissionais qualificados dispostos a realizar esses serviços. O sistema oferece um ambiente seguro e prático para solicitação, negociação e avaliação de serviços.
+O TechTrust é uma plataforma que visa facilitar o encontro entre clientes que precisam de reparos ou serviços técnicos e profissionais qualificados dispostos a realizar esses serviços. O sistema oferece um ambiente seguro e prático para solicitação, negociação e avaliação de serviços.
 
 ## ✨ Funcionalidades
 
@@ -22,10 +22,10 @@ O TechTrust (também conhecido como ConsertaHub) é uma plataforma que visa faci
 
 ## 🚀 Tecnologias Utilizadas
 
-* **Front-end:** [Ex: React, Vue.js, HTML/CSS/JavaScript puro]
-* **Back-end:** [Ex: Node.js, Python, Java, C#]
-* **Banco de Dados:** [Ex: MySQL, PostgreSQL, MongoDB]
-* **Outras ferramentas:** [Ex: Figma para prototipagem, Git/GitHub, Trello]
+* **Front-end:** HTML/CSS/JavaScript
+* **Back-end:** C#
+* **Banco de Dados:** MySQL
+* **Outras ferramentas:** Figma para prototipagem, Git/GitHub, Trello.
 
 ## ⚙️ Como Executar o Projeto
 
