@@ -1,301 +1,326 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechTrust | Técnicos Disponíveis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/dashboard.css">
-</head>
-<body class="dashboard-body">
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TechTrust | Técnicos Disponíveis</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/dashboard.css">
+    </head>
+    <body class="dashboard-body">
 
-    <nav class="dash-navbar">
-        <div class="dash-nav-container">
-            <div class="logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
-                <div class="logo-icon">T</div>
-                <span class="logo-text">Tech<span>Trust</span></span>
+        <nav class="dash-navbar">
+            <div class="dash-nav-container">
+                <div class="logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
+                    <div class="logo-icon">T</div>
+                    <span class="logo-text">Tech<span>Trust</span></span>
+                </div>
+                
+                <div class="search-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" placeholder="Buscar por problema ou aparelho...">
             </div>
-            
-            <div class="search-bar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <input type="text" placeholder="Buscar por problema ou aparelho...">
+
+                <div class="user-menu">
+                    <div class="notification-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="badge-dot"></span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="img/프사.jpg" alt="Foto de Perfil">
+                        <span>Olá, Nicolly</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="dash-main">
+            <header class="dash-header">
+                <div>
+                    <h1>Técnicos Disponíveis</h1>
+                    <p>Encontre o especialista ideal para o seu reparo agora mesmo.</p>
+                </div>
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="smartphones">Smartphones</button>
+                    <button class="filter-btn" data-filter="notebooks">Notebooks</button>
+                    <button class="filter-btn" data-filter="hardware">Hardware</button>
+                    <button class="filter-btn" data-filter="tvs">TVs & Outros</button>
+                </div>
+            </header>
+
+            <div class="tech-grid" id="tech-grid">
+                
+                <div class="tech-card" data-category="smartphones hardware">
+                    <div class="tech-card-header">
+                        <div class="tech-avatar-wrapper">
+                            <img src="img/download (5).jpg" alt="Técnico" class="tech-avatar">
+                        </div>
+                        <div class="tech-info">
+                            <h3 class="tech-name">Carlos Souza<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01" stroke="#fff"></polyline></svg></h3>
+                            <span class="tech-role">Especialista em Apple & Android</span>
+                        </div>
+                    </div>
+                    <div class="tech-stats">
+                        <div class="stat"><span class="star">★</span> 4.9 (128)</div>
+                        <div class="stat">230 reparos</div>
+                        <div class="stat">📍A 2km</div>
+                    </div>
+                    <div class="tech-skills">
+                        <span class="skill-tag">Smartphones</span>
+                        <span class="skill-tag">Hardware</span>
+                    </div>
+                    <div class="tech-actions">
+                        <button class="btn-outline view-profile-btn">Ver Perfil</button>
+                        <button class="btn-primary">Agendar Reparo</button>
+                    </div>
+                </div>
+
+                <div class="tech-card" data-category="notebooks hardware">
+                    <div class="tech-card-header">
+                        <div class="tech-avatar-wrapper">
+                            <img src="img/download (8).jpg" alt="Técnico" class="tech-avatar">
+                        </div>
+                        <div class="tech-info">
+                            <h3 class="tech-name">Mariana Rios <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01" stroke="#fff"></polyline></svg></h3>
+                            <span class="tech-role">Técnica em Informática</span>
+                        </div>
+                    </div>
+                    <div class="tech-stats">
+                        <div class="stat"><span class="star">★</span> 5.0 (89)</div>
+                        <div class="stat">105 reparos</div>
+                        <div class="stat">📍A 4km</div>
+                    </div>
+                    <div class="tech-skills">
+                        <span class="skill-tag">Notebooks</span>
+                        <span class="skill-tag">Placa-mãe</span>
+                    </div>
+                    <div class="tech-actions">
+                        <button class="btn-outline view-profile-btn">Ver Perfil</button>
+                        <button class="btn-primary">Agendar Reparo</button>
+                    </div>
+                </div>
+
+                <div class="tech-card" data-category="tvs smartphones">
+                    <div class="tech-card-header">
+                        <div class="tech-avatar-wrapper">
+                            <img src="img/download (6).jpg" alt="Técnico" class="tech-avatar">
+                        </div>
+                        <div class="tech-info">
+                            <h3 class="tech-name">Roberto Alves</h3>
+                            <span class="tech-role">Assistência Técnica Geral</span>
+                        </div>
+                    </div>
+                    <div class="tech-stats">
+                        <div class="stat"><span class="star">★</span> 4.7 (340)</div>
+                        <div class="stat">512 reparos</div>
+                        <div class="stat">📍A 8km</div>
+                    </div>
+                    <div class="tech-skills">
+                        <span class="skill-tag">TVs</span>
+                        <span class="skill-tag">Smartphones</span>
+                    </div>
+                    <div class="tech-actions">
+                        <button class="btn-outline view-profile-btn">Ver Perfil</button>
+                        <button class="btn-primary">Agendar Reparo</button>
+                    </div>
+                </div>
+
+                <div class="tech-card" data-category="notebooks smartphones">
+                    <div class="tech-card-header">
+                        <div class="tech-avatar-wrapper">
+                            <img src="img/Older Men.jpg" alt="Técnico" class="tech-avatar">
+                        </div>
+                        <div class="tech-info">
+                            <h3 class="tech-name">Lucas Mendes <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01" stroke="#fff"></polyline></svg></h3>
+                            <span class="tech-role">Especialista em Telas</span>
+                        </div>
+                    </div>
+                    <div class="tech-stats">
+                        <div class="stat"><span class="star">★</span> 4.8 (210)</div>
+                        <div class="stat">300 reparos</div>
+                        <div class="stat">📍A 1km</div>
+                    </div>
+                    <div class="tech-skills">
+                        <span class="skill-tag">Smartphones</span>
+                        <span class="skill-tag">Notebooks</span>
+                    </div>
+                    <div class="tech-actions">
+                        <button class="btn-outline view-profile-btn">Ver Perfil</button>
+                        <button class="btn-primary">Agendar Reparo</button>
+                    </div>
+                </div>
+
+                <div class="tech-card" data-category="hardware">
+                    <div class="tech-card-header">
+                        <div class="tech-avatar-wrapper">
+                            <img src="img/Woman.jpg" alt="Técnico" class="tech-avatar">
+                        </div>
+                        <div class="tech-info">
+                            <h3 class="tech-name">Juliana Costa</h3>
+                            <span class="tech-role">Montagem e Reparo de PCs</span>
+                        </div>
+                    </div>
+                    <div class="tech-stats">
+                        <div class="stat"><span class="star">★</span> 4.9 (55)</div>
+                        <div class="stat">80 reparos</div>
+                        <div class="stat">📍A 6km</div>
+                    </div>
+                    <div class="tech-skills">
+                        <span class="skill-tag">Hardware</span>
+                        <span class="skill-tag">Desktops</span>
+                    </div>
+                    <div class="tech-actions">
+                        <button class="btn-outline view-profile-btn">Ver Perfil</button>
+                        <button class="btn-primary">Agendar Reparo</button>
+                    </div>
+                </div>
+
+                <div class="tech-card" data-category="tvs">
+                    <div class="tech-card-header">
+                        <div class="tech-avatar-wrapper">
+                            <img src="img/download (7).jpg" alt="Técnico" class="tech-avatar">
+                        </div>
+                        <div class="tech-info">
+                            <h3 class="tech-name">Fernando Silva <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01" stroke="#fff"></polyline></svg></h3>
+                            <span class="tech-role">Eletrônica em Geral</span>
+                        </div>
+                    </div>
+                    <div class="tech-stats">
+                        <div class="stat"><span class="star">★</span> 4.6 (120)</div>
+                        <div class="stat">180 reparos</div>
+                        <div class="stat">📍A 3.5km</div>
+                    </div>
+                    <div class="tech-skills">
+                        <span class="skill-tag">TVs</span>
+                        <span class="skill-tag">Monitores</span>
+                    </div>
+                    <div class="tech-actions">
+                        <button class="btn-outline view-profile-btn">Ver Perfil</button>
+                        <button class="btn-primary">Agendar Reparo</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <div id="profile-modal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="close-modal">&times;</button>
+                <div class="modal-header">
+                    <div class="modal-avatar">
+                        <img id="modal-img" src="" alt="Foto">
+                    </div>
+                    <div class="modal-title">
+                        <h2 id="modal-name">Nome do Técnico</h2>
+                        <p id="modal-role">Especialidade</p>
+                        <div class="modal-badges">
+                            <span class="badge-trust">✓ Verificado TechTrust</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h3>Sobre</h3>
+                    <p>Profissional altamente qualificado com anos de experiência no mercado. Garantia de serviço bem feito, utilizando apenas peças de qualidade e oferecendo suporte pós-reparo.</p>
+
+                </div>
+            </div>
         </div>
 
-            <div class="user-menu">
-                <div class="notification-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                    <span class="badge-dot"></span>
-                </div>
-                <div class="user-profile">
-                    <img src="img/프사.jpg" alt="Foto de Perfil">
-                    <span>Olá, Nicolly</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </div>
-            </div>
-        </div>
-    </nav>
+        <script>
+            // LÓGICA DE FILTROS
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const techCards = document.querySelectorAll('.tech-card');
 
-    <main class="dash-main">
-        <header class="dash-header">
-            <div>
-                <h1>Técnicos Disponíveis</h1>
-                <p>Encontre o especialista ideal para o seu reparo agora mesmo.</p>
-            </div>
-            <div class="filters">
-                <button class="filter-btn active" data-filter="todos">Todos</button>
-                <button class="filter-btn" data-filter="smartphones">Smartphones</button>
-                <button class="filter-btn" data-filter="notebooks">Notebooks</button>
-                <button class="filter-btn" data-filter="hardware">Hardware</button>
-                <button class="filter-btn" data-filter="tvs">TVs & Outros</button>
-            </div>
-        </header>
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove a classe 'active' de todos os botões
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Adiciona a classe 'active' no botão clicado
+                    btn.classList.add('active');
 
-        <div class="tech-grid" id="tech-grid">
-            
-            <div class="tech-card" data-category="smartphones hardware">
-                <div class="tech-card-header">
-                    <div class="tech-avatar-wrapper">
-                        <img src="img/프사.jpg" alt="Técnico" class="tech-avatar">
-                    </div>
-                    <div class="tech-info">
-                        <h3 class="tech-name">Carlos Souza<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01" stroke="#fff"></polyline></svg></h3>
-                        <span class="tech-role">Especialista em Apple & Android</span>
-                    </div>
-                </div>
-                <div class="tech-stats">
-                    <div class="stat"><span class="star">★</span> 4.9 (128)</div>
-                    <div class="stat">230 reparos</div>
-                    <div class="stat">📍A 2km</div>
-                </div>
-                <div class="tech-skills">
-                    <span class="skill-tag">Smartphones</span>
-                    <span class="skill-tag">Hardware</span>
-                </div>
-                <div class="tech-actions">
-                    <button class="btn-outline view-profile-btn">Ver Perfil</button>
-                    <button class="btn-primary">Agendar Reparo</button>
-                </div>
-            </div>
+                    // Pega a categoria escolhida
+                    const filterValue = btn.getAttribute('data-filter');
 
-            <div class="tech-card" data-category="notebooks hardware">
-                <div class="tech-card-header">
-                    <div class="tech-avatar-wrapper">
-                        <img src="img/프사.jpg" alt="Técnico" class="tech-avatar">
-                    </div>
-                    <div class="tech-info">
-                        <h3 class="tech-name">Mariana Rios <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01" stroke="#fff"></polyline></svg></h3>
-                        <span class="tech-role">Técnica em Informática</span>
-                    </div>
-                </div>
-                <div class="tech-stats">
-                    <div class="stat"><span class="star">★</span> 5.0 (89)</div>
-                    <div class="stat">105 reparos</div>
-                    <div class="stat">📍A 4km</div>
-                </div>
-                <div class="tech-skills">
-                    <span class="skill-tag">Notebooks</span>
-                    <span class="skill-tag">Placa-mãe</span>
-                </div>
-                <div class="tech-actions">
-                    <button class="btn-outline view-profile-btn">Ver Perfil</button>
-                    <button class="btn-primary">Agendar Reparo</button>
-                </div>
-            </div>
-
-            <div class="tech-card" data-category="tvs smartphones">
-                <div class="tech-card-header">
-                    <div class="tech-avatar-wrapper">
-                        <img src="img/프사.jpg" alt="Técnico" class="tech-avatar">
-                    </div>
-                    <div class="tech-info">
-                        <h3 class="tech-name">Roberto Alves</h3>
-                        <span class="tech-role">Assistência Técnica Geral</span>
-                    </div>
-                </div>
-                <div class="tech-stats">
-                    <div class="stat"><span class="star">★</span> 4.7 (340)</div>
-                    <div class="stat">512 reparos</div>
-                    <div class="stat">📍A 8km</div>
-                </div>
-                <div class="tech-skills">
-                    <span class="skill-tag">TVs</span>
-                    <span class="skill-tag">Smartphones</span>
-                </div>
-                <div class="tech-actions">
-                    <button class="btn-outline view-profile-btn">Ver Perfil</button>
-                    <button class="btn-primary">Agendar Reparo</button>
-                </div>
-            </div>
-
-            <div class="tech-card" data-category="notebooks smartphones">
-                <div class="tech-card-header">
-                    <div class="tech-avatar-wrapper">
-                        <img src="img/프사.jpg" alt="Técnico" class="tech-avatar">
-                    </div>
-                    <div class="tech-info">
-                        <h3 class="tech-name">Lucas Mendes <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01" stroke="#fff"></polyline></svg></h3>
-                        <span class="tech-role">Especialista em Telas</span>
-                    </div>
-                </div>
-                <div class="tech-stats">
-                    <div class="stat"><span class="star">★</span> 4.8 (210)</div>
-                    <div class="stat">300 reparos</div>
-                    <div class="stat">📍A 1km</div>
-                </div>
-                <div class="tech-skills">
-                    <span class="skill-tag">Smartphones</span>
-                    <span class="skill-tag">Notebooks</span>
-                </div>
-                <div class="tech-actions">
-                    <button class="btn-outline view-profile-btn">Ver Perfil</button>
-                    <button class="btn-primary">Agendar Reparo</button>
-                </div>
-            </div>
-
-            <div class="tech-card" data-category="hardware">
-                <div class="tech-card-header">
-                    <div class="tech-avatar-wrapper">
-                        <img src="img/프사.jpg" alt="Técnico" class="tech-avatar">
-                    </div>
-                    <div class="tech-info">
-                        <h3 class="tech-name">Juliana Costa</h3>
-                        <span class="tech-role">Montagem e Reparo de PCs</span>
-                    </div>
-                </div>
-                <div class="tech-stats">
-                    <div class="stat"><span class="star">★</span> 4.9 (55)</div>
-                    <div class="stat">80 reparos</div>
-                    <div class="stat">📍A 6km</div>
-                </div>
-                <div class="tech-skills">
-                    <span class="skill-tag">Hardware</span>
-                    <span class="skill-tag">Desktops</span>
-                </div>
-                <div class="tech-actions">
-                    <button class="btn-outline view-profile-btn">Ver Perfil</button>
-                    <button class="btn-primary">Agendar Reparo</button>
-                </div>
-            </div>
-
-            <div class="tech-card" data-category="tvs">
-                <div class="tech-card-header">
-                    <div class="tech-avatar-wrapper">
-                        <img src="img/프사.jpg" alt="Técnico" class="tech-avatar">
-                    </div>
-                    <div class="tech-info">
-                        <h3 class="tech-name">Fernando Silva <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01" stroke="#fff"></polyline></svg></h3>
-                        <span class="tech-role">Eletrônica em Geral</span>
-                    </div>
-                </div>
-                <div class="tech-stats">
-                    <div class="stat"><span class="star">★</span> 4.6 (120)</div>
-                    <div class="stat">180 reparos</div>
-                    <div class="stat">📍A 3.5km</div>
-                </div>
-                <div class="tech-skills">
-                    <span class="skill-tag">TVs</span>
-                    <span class="skill-tag">Monitores</span>
-                </div>
-                <div class="tech-actions">
-                    <button class="btn-outline view-profile-btn">Ver Perfil</button>
-                    <button class="btn-primary">Agendar Reparo</button>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <div id="profile-modal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <div class="modal-header">
-                <div class="modal-avatar">
-                    <img id="modal-img" src="" alt="Foto">
-                </div>
-                <div class="modal-title">
-                    <h2 id="modal-name">Nome do Técnico</h2>
-                    <p id="modal-role">Especialidade</p>
-                    <div class="modal-badges">
-                        <span class="badge-trust">✓ Verificado TechTrust</span>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-body">
-                <h3>Sobre</h3>
-                <p>Profissional altamente qualificado com anos de experiência no mercado. Garantia de serviço bem feito, utilizando apenas peças de qualidade e oferecendo suporte pós-reparo.</p>
-
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // LÓGICA DE FILTROS
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const techCards = document.querySelectorAll('.tech-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove a classe 'active' de todos os botões
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Adiciona a classe 'active' no botão clicado
-                btn.classList.add('active');
-
-                // Pega a categoria escolhida
-                const filterValue = btn.getAttribute('data-filter');
-
-                // Esconde ou mostra os cards
-                techCards.forEach(card => {
-                    const categories = card.getAttribute('data-category');
-                    if (filterValue === 'todos' || categories.includes(filterValue)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    // Esconde ou mostra os cards
+                    techCards.forEach(card => {
+                        const categories = card.getAttribute('data-category');
+                        if (filterValue === 'todos' || categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
                 });
             });
-        });
 
-        // LÓGICA DO MODAL (VER PERFIL)
-        const modal = document.getElementById('profile-modal');
-        const closeBtn = document.querySelector('.close-modal');
-        const viewBtns = document.querySelectorAll('.view-profile-btn');
+            // LÓGICA DO MODAL (VER PERFIL)
+            const modal = document.getElementById('profile-modal');
+            const closeBtn = document.querySelector('.close-modal');
+            const viewBtns = document.querySelectorAll('.view-profile-btn');
 
-        // Elementos de dentro do modal para preencher os dados
-        const modalName = document.getElementById('modal-name');
-        const modalRole = document.getElementById('modal-role');
-        const modalImg = document.getElementById('modal-img');
+            // Elementos de dentro do modal para preencher os dados
+            const modalName = document.getElementById('modal-name');
+            const modalRole = document.getElementById('modal-role');
+            const modalImg = document.getElementById('modal-img');
 
-        viewBtns.forEach(btn => {
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Acha o card "pai" do botão clicado
+                    const card = e.target.closest('.tech-card');
+                    
+                    // Pega as informações do HTML do card
+                    const name = card.querySelector('.tech-name').innerText;
+                    const role = card.querySelector('.tech-role').innerText;
+                    const imgSrc = card.querySelector('.tech-avatar').src;
+
+                    // Preenche o modal
+                    modalName.innerText = name;
+                    modalRole.innerText = role;
+                    modalImg.src = imgSrc;
+
+                    // Mostra o modal
+                    modal.classList.add('active');
+                });
+            });
+
+            // Fechar modal no X
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+
+            // Fechar modal clicando fora dele
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            // === NOVA LÓGICA: AGENDAR REPARO (Enviando dados para a próxima página) ===
+        // Seleciona todos os botões "Agendar Reparo" (que usam a classe btn-primary nos cards)
+        const agendarBtns = document.querySelectorAll('.tech-actions .btn-primary');
+
+        agendarBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
-                // Acha o card "pai" do botão clicado
+                // Acha o card "pai" de onde o clique veio
                 const card = e.target.closest('.tech-card');
                 
-                // Pega as informações do HTML do card
-                const name = card.querySelector('.tech-name').innerText;
-                const role = card.querySelector('.tech-role').innerText;
+                // Extrai o nome e a imagem (tirando ícones extras que possam ter no nome)
+                let name = card.querySelector('.tech-name').innerText;
                 const imgSrc = card.querySelector('.tech-avatar').src;
 
-                // Preenche o modal
-                modalName.innerText = name;
-                modalRole.innerText = role;
-                modalImg.src = imgSrc;
+                // Limpa o nome (caso o SVG de verificado venha junto no innerText)
+                name = name.replace(/✓/g, '').trim(); 
 
-                // Mostra o modal
-                modal.classList.add('active');
+                // Salva as informações na memória do navegador (localStorage)
+                localStorage.setItem('techName', name);
+                localStorage.setItem('techImg', imgSrc);
+
+                // Redireciona o usuário para a página de chat
+                window.location.href = 'agendar-reparo.html';
             });
         });
-
-        // Fechar modal no X
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-
-        // Fechar modal clicando fora dele
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>

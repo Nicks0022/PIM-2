@@ -1,0 +1,307 @@
+/* Variáveis baseadas no seu projeto */
+:root {
+    --bg-color: #f4f6f8;
+    --card-bg: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #6e6e73;
+    --primary-blue: #0066ff;
+    --border-color: #e5e5ea;
+    --chat-bg: #f2f2f7;
+    --success-color: #28a745;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container que engloba o botão voltar e os cartões */
+.page-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Botão de Voltar */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+    align-self: flex-start;
+}
+
+.btn-back:hover {
+    color: var(--primary-blue);
+}
+
+/* Container do Grid (Formulário + Chat) */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+/* Estilo comum dos Cards */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: var(--text-main);
+}
+
+/* --- LADO ESQUERDO: FORMULÁRIO --- */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+textarea::placeholder {
+    color: #a1a1a6;
+}
+
+textarea:focus {
+    border-color: var(--primary-blue);
+}
+
+/* Área de Upload */
+.upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.upload-area:hover {
+    background-color: #f8f9fa;
+    border-color: #c7c7cc;
+}
+
+.upload-icon {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+.upload-text {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.upload-subtext {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* --- LADO DIREITO: CHAT --- */
+.chat-card {
+    padding: 0; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 480px;
+}
+
+/* Perfil do Técnico no Header */
+.chat-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tech-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    object-fit: cover;
+}
+
+.tech-info h2 {
+    margin-bottom: 0.1rem;
+    font-size: 1.1rem;
+}
+
+.tech-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--success-color);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Área de Mensagens */
+.chat-messages {
+    flex: 1;
+    padding: 1.2rem 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    max-width: 85%;
+}
+
+.message-tech {
+    align-self: flex-start;
+}
+
+.message-tech .message-bubble {
+    background-color: var(--chat-bg);
+    padding: 0.8rem 1rem;
+    border-radius: 10px 10px 10px 2px;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.message-tech .message-time {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    text-align: left;
+}
+
+.message-user {
+    align-self: flex-end;
+}
+
+.message-user .message-bubble {
+    background-color: var(--primary-blue);
+    padding: 0.8rem 1rem;
+    border-radius: 10px 10px 2px 10px;
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.message-user .message-time {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    text-align: right;
+}
+
+/* Input do Chat */
+.chat-input-container {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 0.8rem;
+    background-color: #fff;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.chat-input:focus {
+    border-color: var(--primary-blue);
+}
+
+.btn-send {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-send:hover {
+    background-color: #005ce6;
+}
+
+.chat-messages::-webkit-scrollbar { width: 6px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background-color: #d1d1d6; border-radius: 10px; }
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .dashboard-container { grid-template-columns: 1fr; }
+    .chat-card { height: 450px; }
+}
