@@ -33,7 +33,7 @@ O projeto conta com uma modelagem robusta, focada em:
 
 ---
 ## 🔗 Link do Projeto
-O site está disponível online em: [https://nicks0022.github.io/techtrust/](https://nicks0022.github.io/techtrust/)
+O site está disponível online em: [https://nicks0022.github.io/techtrust/]([https://nicks0022.github.io/techtrust/](https://nicks0022.github.io/PIM-2/)
 
 ---
 
