@@ -32,6 +32,10 @@ O projeto conta com uma modelagem robusta, focada em:
    git clone [https://github.com/Nicks0022/techtrust.git](https://github.com/Nicks0022/techtrust.git)
 
 ---
+## 🔗 Link do Projeto
+O site está disponível online em: [https://nicks0022.github.io/techtrust/](https://nicks0022.github.io/techtrust/)
+
+---
 
 ## 👋 Vamos nos conectar?
 Este projeto é parte integrante da avaliação acadêmica do curso de ADS - UNIP.
