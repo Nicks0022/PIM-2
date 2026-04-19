@@ -1,307 +1,330 @@
-/* Variáveis baseadas no seu projeto */
 :root {
-    --bg-color: #f4f6f8;
-    --card-bg: #ffffff;
-    --text-main: #1a1a1a;
-    --text-muted: #6e6e73;
-    --primary-blue: #0066ff;
-    --border-color: #e5e5ea;
-    --chat-bg: #f2f2f7;
-    --success-color: #28a745;
+    --primary-blue: #0ea5e9;
+    --dark-blue: #0284c7;
+    --text-main: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --bg-gray: #f1f5f9;
+    --border-light: #e2e8f0;
+    --success-green: #10b981;
 }
 
-* {
-    margin: 0;
-    padding: 0;
+/* Design Premium - Estilo App */
+* { 
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Container que engloba o botão voltar e os cartões */
-.page-wrapper {
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-/* Botão de Voltar */
-.btn-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-    align-self: flex-start;
-}
-
-.btn-back:hover {
-    color: var(--primary-blue);
-}
-
-/* Container do Grid (Formulário + Chat) */
-.dashboard-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-    width: 100%;
-}
-
-/* Estilo comum dos Cards */
-.card {
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border-color);
-}
-
-h2 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 1.2rem;
-    color: var(--text-main);
-}
-
-/* --- LADO ESQUERDO: FORMULÁRIO --- */
-.form-group {
-    margin-bottom: 1.2rem;
-}
-
-.form-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
-}
-
-textarea {
-    width: 100%;
-    min-height: 110px;
-    padding: 0.8rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    resize: vertical;
-    font-size: 0.9rem;
-    color: var(--text-main);
-    outline: none;
-    transition: border-color 0.2s;
-}
-
-textarea::placeholder {
-    color: #a1a1a6;
-}
-
-textarea:focus {
-    border-color: var(--primary-blue);
-}
-
-/* Área de Upload */
-.upload-area {
-    border: 2px dashed var(--border-color);
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.upload-area:hover {
-    background-color: #f8f9fa;
-    border-color: #c7c7cc;
-}
-
-.upload-icon {
-    margin-bottom: 0.5rem;
-    color: var(--text-muted);
-}
-
-.upload-text {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-main);
-    margin-bottom: 0.2rem;
-}
-
-.upload-subtext {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-
-/* --- LADO DIREITO: CHAT --- */
-.chat-card {
+    margin: 0; 
     padding: 0; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif;
+    /* Fundo adaptado para usar suas variáveis de cor */
+    background: linear-gradient(135deg, var(--bg-gray) 0%, var(--border-light) 100%); 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    color: var(--text-main); 
+}
+
+/* Container Principal simulando um celular na tela */
+.chat-app { 
+    width: 100%;
+    max-width: 400px; 
+    height: 85vh; 
+    background: var(--white); 
+    border-radius: 24px; 
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12); 
+    display: flex; 
+    flex-direction: column; 
+    margin-top: 5%;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 480px;
+    position: relative;
 }
 
-/* Perfil do Técnico no Header */
-.chat-header {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+/* Header Premium com a cor da marca */
+.chat-header { 
+    background: var(--primary-blue);
+    color: var(--white); 
+    padding: 16px 20px; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    z-index: 10;
 }
 
-.tech-avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: var(--primary-blue);
-    color: white;
-    display: flex;
-    align-items: center;
+.btn-back { 
+    color: var(--white);
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
     justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    object-fit: cover;
+    width: 32px; 
+    height: 32px; 
+    border-radius: 50%; 
+    background: rgba(255,255,255,0.2); 
+    transition: 0.2s;
 }
 
-.tech-info h2 {
-    margin-bottom: 0.1rem;
-    font-size: 1.1rem;
+.btn-back:hover { 
+    background: rgba(255,255,255,0.3);
 }
 
-.tech-info p {
-    font-size: 0.8rem;
-    color: var(--text-muted);
+.tech-avatar { 
+    width: 42px; 
+    height: 42px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    background-color: var(--white);
+    border: 2px solid rgba(255,255,255,0.5); 
+}
+
+.tech-info h2 { 
+    font-size: 16px; 
+    font-weight: 600;
+    margin-bottom: 2px; 
+}
+
+.tech-info p { 
+    font-size: 12px; 
+    color: rgba(255,255,255,0.9); 
     display: flex;
-    align-items: center;
-    gap: 0.4rem;
+    align-items: center; 
+    gap: 5px; 
 }
 
-.status-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--success-color);
-    border-radius: 50%;
-    display: inline-block;
+.status-dot { 
+    width: 8px; 
+    height: 8px; 
+    background-color: var(--success-green);
+    border-radius: 50%; 
+    display: inline-block; 
+    box-shadow: 0 0 5px var(--success-green); 
 }
 
-/* Área de Mensagens */
-.chat-messages {
+/* Área de Mensagens com fundo texturizado */
+.chat-messages { 
     flex: 1;
-    padding: 1.2rem 1.5rem;
-    overflow-y: auto;
+    padding: 20px 15px; 
+    overflow-y: auto; 
+    background-color: var(--bg-gray); 
+    background-image: radial-gradient(var(--border-light) 1px, transparent 1px);
+    background-size: 20px 20px;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: column; 
+    gap: 16px; 
 }
 
-.message {
-    max-width: 85%;
+.message { 
+    display: flex;
+    flex-direction: column; 
+    max-width: 80%; 
+    position: relative; 
 }
 
-.message-tech {
+.message-tech { 
     align-self: flex-start;
 }
 
-.message-tech .message-bubble {
-    background-color: var(--chat-bg);
-    padding: 0.8rem 1rem;
-    border-radius: 10px 10px 10px 2px;
-    color: var(--text-main);
-    font-size: 0.9rem;
-    line-height: 1.4;
+.message-user { 
+    align-self: flex-end; 
+    align-items: flex-end;
 }
 
-.message-tech .message-time {
-    display: block;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    margin-top: 0.3rem;
-    text-align: left;
+/* Balões de Mensagem com "Rabinho" (Design Realista) */
+.message-bubble { 
+    padding: 12px 16px;
+    border-radius: 16px; 
+    font-size: 15px; 
+    line-height: 1.4; 
+    word-wrap: break-word; 
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.message-user {
-    align-self: flex-end;
+.message-tech .message-bubble { 
+    background-color: var(--white);
+    color: var(--text-main); 
+    border-bottom-left-radius: 4px; 
 }
 
-.message-user .message-bubble {
+/* O "rabinho" do balão do técnico */
+.message-tech .message-bubble::before {
+    content: '';
+    position: absolute; 
+    left: -6px; 
+    bottom: 0;
+    width: 12px; 
+    height: 16px; 
+    background-color: var(--white);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.message-user .message-bubble { 
     background-color: var(--primary-blue);
-    padding: 0.8rem 1rem;
-    border-radius: 10px 10px 2px 10px;
-    color: white;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    color: var(--white); 
+    border-bottom-right-radius: 4px; 
 }
 
-.message-user .message-time {
-    display: block;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    margin-top: 0.3rem;
+/* O "rabinho" do balão do usuário */
+.message-user .message-bubble::after {
+    content: '';
+    position: absolute; 
+    right: -6px; 
+    bottom: 0;
+    width: 12px; 
+    height: 16px; 
+    background-color: var(--primary-blue);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.message-time { 
+    font-size: 11px; 
+    color: var(--text-light); 
+    margin-top: 5px; 
+    font-weight: 500;
+}
+
+.message-user .message-time { 
     text-align: right;
 }
 
-/* Input do Chat */
-.chat-input-container {
-    padding: 1rem 1.5rem;
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    gap: 0.8rem;
-    background-color: #fff;
+/* Estilo elegante para as fotos anexadas */
+.message-image { 
+    max-width: 100%;
+    max-height: 220px; 
+    border-radius: 12px; 
+    display: block; 
+    object-fit: cover; 
+    border: 2px solid rgba(255,255,255,0.2);
 }
 
-.chat-input {
+/* Quando o balão tem só imagem, removemos o padding para a imagem preencher tudo */
+.bubble-image-only { 
+    padding: 4px !important;
+    background: transparent !important; 
+    box-shadow: none !important; 
+}
+
+.bubble-image-only::after { 
+    display: none;
+} /* Remove o rabinho se for só imagem */
+
+/* Barra de Digitação Flutuante */
+.input-area-wrapper { 
+    background: var(--bg-gray);
+    padding: 10px 15px 15px 15px; 
+}
+
+.chat-input-container { 
+    background: var(--white);
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    padding: 6px 6px 6px 15px; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.btn-attach { 
+    background: none;
+    border: none; 
+    color: var(--text-light); 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    transition: 0.2s;
+}
+
+.btn-attach:hover { 
+    color: var(--primary-blue);
+}
+
+.chat-input { 
     flex: 1;
-    padding: 0.7rem 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-size: 0.9rem;
-    outline: none;
-    transition: border-color 0.2s;
+    border: none; 
+    font-size: 15px; 
+    outline: none; 
+    background: transparent; 
+    padding: 10px 0;
+    color: var(--text-main);
 }
 
-.chat-input:focus {
-    border-color: var(--primary-blue);
+.chat-input::placeholder { 
+    color: var(--text-light);
 }
 
-.btn-send {
+.btn-send { 
     background-color: var(--primary-blue);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    color: var(--white); 
+    border: none; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    transition: 0.2s;
 }
 
-.btn-send:hover {
-    background-color: #005ce6;
+.btn-send:hover { 
+    transform: scale(1.05); 
+    background-color: var(--dark-blue);
 }
 
-.chat-messages::-webkit-scrollbar { width: 6px; }
-.chat-messages::-webkit-scrollbar-track { background: transparent; }
-.chat-messages::-webkit-scrollbar-thumb { background-color: #d1d1d6; border-radius: 10px; }
-
-/* Responsividade */
-@media (max-width: 900px) {
-    .dashboard-container { grid-template-columns: 1fr; }
-    .chat-card { height: 450px; }
+#file-input { 
+    display: none;
 }
+.dash-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .dash-nav-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--primary-blue);
+            color: var(--white);
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .logo-text span { color: var(--primary-blue); }

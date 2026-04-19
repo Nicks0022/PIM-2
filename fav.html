@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTrust | Técnicos Favoritos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/favoritos.css">
+</head>
+<body class="dashboard-body">
+
+    <nav class="dash-navbar">
+        <div class="dash-nav-container">
+            <div class="logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
+                <div class="logo-icon">T</div>
+                <span class="logo-text">Tech<span>Trust</span></span>
+            </div>
+            
+            <div class="user-menu">
+                <div class="user-profile" onclick="window.location.href='dashboard.html';">
+                    <span style="color: var(--primary-blue); font-size: 14px; font-weight: 600;" cursor="pointer">← Voltar</span>
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <div>
+                <h1>Meus Favoritos</h1>
+                <p>Acesse rapidamente os técnicos que você mais confia.</p>
+            </div>
+        </header>
+
+        <div class="tech-grid" id="favorites-grid">
+            
+            <div class="tech-card" data-category="notebooks hardware">
+    <div class="tech-card-header">
+        <button class="btn-like btn-fav-toggle" title="Remover dos Favoritos">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+        </button>
+
+        <div class="tech-avatar-wrapper">
+            <img src="img/download (8).jpg" alt="Técnico" class="tech-avatar">
+        </div>
+
+        <div class="tech-info">
+            <h3 class="tech-name">Mariana Rios</h3>
+            <span class="tech-role">Técnica em Informática</span>
+        </div>
+    </div>
+
+    <p class="tech-card-description" style="font-size: 13px; color: var(--text-light); margin: 15px 0; line-height: 1.4;">
+        Especialista em reparos de hardware e upgrades de performance.
+    </p>
+
+    <div class="tech-actions">
+        <button class="btn-primary btn-agendar-fav" style="width: 100%; padding: 12px; font-weight: 700;">Agendar Novo Reparo</button>
+    </div>
+</div>
+
+            <div class="tech-card" data-category="notebooks hardware">
+    <div class="tech-card-header">
+        <button class="btn-like" title="Remover dos Favoritos">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+        </button>
+
+        <div class="tech-avatar-wrapper">
+            <img src="img/download (5).jpg" alt="Técnico" class="tech-avatar">
+        </div>
+
+        <div class="tech-info">
+            <h3 class="tech-name">Carlos Souza</h3>
+            <span class="tech-role">Especialista em Apple & Android
+</span>
+        </div>
+    </div>
+
+    <p class="tech-card-description" style="font-size: 13px; color: var(--text-light); margin: 15px 0; line-height: 1.4;">
+        Especialista certificado em reparos avançados de placas de iPhone e Android.
+    </p>
+
+    <div class="tech-actions">
+        <button class="btn-primary btn-agendar-fav"  rstyle="width: 100%; padding: 12px; font-weight: 700;">Agendar Novo Reparo</button>
+    </div>
+</div>
+    </main>
+
+    <script>
+    // ==========================================
+// LÓGICA PARA REMOVER DOS FAVORITOS
+// ==========================================
+const favButtons = document.querySelectorAll('.btn-fav-toggle');
+
+favButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Encontra o card pai
+        const card = this.closest('.tech-card');
+        const techName = card.querySelector('.tech-name').innerText;
+
+        if (confirm(`Deseja remover ${techName} dos seus favoritos?`)) {
+            // Efeito visual de saída
+            card.style.transition = 'all 0.4s ease';
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.9)';
+
+            // Remove o elemento do HTML após a animação
+            setTimeout(() => {
+                card.remove();
+                
+                // Verifica se a lista ficou vazia
+                const grid = document.querySelector('.tech-grid');
+                if (grid && grid.querySelectorAll('.tech-card').length === 0) {
+                    grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: var(--text-light); margin-top: 50px;">Você ainda não tem técnicos favoritos.</p>';
+                }
+            }, 400);
+
+            alert(`${techName} removido com sucesso.`);
+        }
+    });
+});
+// ==========================================
+// REDIRECIONAMENTO DOS FAVORITOS PARA AGENDAR
+// ==========================================
+const agendarFavBtns = document.querySelectorAll('.btn-agendar-fav');
+
+agendarFavBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Encontra o card onde o botão foi clicado
+        const card = this.closest('.tech-card');
+        
+        // Pega os dados do técnico deste card
+        const name = card.querySelector('.tech-name').innerText;
+        const imgSrc = card.querySelector('.tech-avatar').getAttribute('src');
+
+        // Salva no localStorage para a tela de chat/agendar usar
+        localStorage.setItem('techName', name.trim());
+        localStorage.setItem('techImg', imgSrc);
+
+        // Redireciona
+        window.location.href = 'agendar-reparo.html';
+    });
+});
+    </script>
+</body>
+</html>

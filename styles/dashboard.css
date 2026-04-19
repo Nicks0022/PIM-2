@@ -433,3 +433,423 @@
     line-height: 1.6;
     font-size: 14px;
 }
+
+/* ESTILOS DO MENU DE LOGOFF */
+.user-profile {
+    position: relative; /* Necessário para posicionar o menu abaixo */
+    cursor: pointer;
+}
+
+/* =========================================
+   ESTILOS DO NOVO MENU DE PERFIL
+   ========================================= */
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 130%; 
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    width: 240px; /* Mais largo para caber as novas opções */
+    z-index: 1000;
+    border: 1px solid #e2e8f0;
+    padding: 8px 0; /* Espaçamento apenas em cima e embaixo */
+    overflow: hidden;
+}
+
+.dropdown-menu.active {
+    display: block; 
+}
+
+.dropdown-header {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    font-weight: 700;
+    padding: 8px 20px;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.dropdown-item svg {
+    color: var(--text-light);
+    transition: color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #f8fafc; /* Fundo cinza bem claro ao passar o mouse */
+    color: var(--primary-blue);
+}
+
+.dropdown-item:hover svg {
+    color: var(--primary-blue); /* Ícone fica azul junto com o texto */
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 6px 0;
+}
+
+.btn-logoff {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    color: #ef4444; /* Vermelho */
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px 20px;
+    transition: background 0.2s;
+    font-family: inherit;
+    text-align: left;
+}
+
+.btn-logoff svg {
+    color: #ef4444;
+}
+
+.btn-logoff:hover {
+    background-color: #fee2e2;
+}
+
+/* ESTILOS DO MENU DE NOTIFICAÇÕES */
+.notification-menu {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 130%; /* Distância do sininho */
+    right: -10px; /* Alinha mais à direita */
+    width: 320px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    z-index: 1000;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    cursor: default; /* Evita que a setinha do mouse mude ao passar por cima do painel */
+}
+
+.notification-menu.active {
+    display: block; /* Mostra quando o JavaScript adicionar a classe */
+}
+
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+}
+
+.notif-header h4 {
+    margin: 0;
+    font-size: 15px;
+    color: #1e293b;
+}
+
+.notif-count {
+    background-color: #0ea5e9;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.notif-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto; /* Adiciona rolagem se tiver muitas notificações */
+}
+
+.notif-item {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.2s;
+}
+
+.notif-item:hover {
+    background-color: #f8fafc;
+}
+
+.notif-item.unread {
+    background-color: #f0f9ff; /* Cor de fundo levemente azul para não lidas */
+}
+
+.notif-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e0f2fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.notif-content p {
+    margin: 0;
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.4;
+}
+
+.notif-time {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 4px;
+    display: block;
+}
+
+.notif-footer {
+    padding: 12px;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-mark-read {
+    background: none;
+    border: none;
+    color: #0ea5e9;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-mark-read:hover {
+    color: #0284c7;
+}
+/* Footer */ 
+/* Classe responsável por centralizar o conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+.footer {
+    background-color: #0f172a;
+    padding-top: 80px;
+    color: var(--text-light);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-brand .logo-text {
+    color: var(--white);
+}
+
+.footer-brand p {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer h4 {
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li {
+    margin-bottom: 15px;
+}
+
+.footer ul a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer ul a:hover {
+    color: var(--primary-blue);
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--text-light);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.social-icons svg:hover {
+    stroke: var(--primary-blue);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE (Media Queries)
+   ========================================= */
+
+/* Telas médias (Tablets) - até 992px */
+@media (max-width: 992px) {
+    .search-bar {
+        width: 300px;
+    }
+}
+
+/* Telas pequenas (Smartphones) - até 768px */
+@media (max-width: 768px) {
+    /* 1. Ajuste do Menu Superior */
+    .dash-nav-container {
+        gap: 15px;
+    }
+    .logo-text, 
+    .user-profile span {
+        display: none; 
+    }
+    .search-bar {
+        flex: 1;
+        width: auto;
+        max-width: none;
+    }
+
+    /* 2. Cabeçalho em Coluna (Texto em cima, Filtros embaixo) */
+    .dash-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    /* 3. Filtros Roláveis na Horizontal */
+    .filters {
+        display: flex;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        gap: 8px;
+        width: 100%;
+        padding-bottom: 5px;
+        
+        /* Esconde a barra de rolagem nativa */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+    .filters::-webkit-scrollbar {
+        display: none; /* Chrome/Safari/Opera */
+    }
+    .filter-btn {
+        flex: 0 0 auto !important;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    /* 4. Grid, Modais e Menus */
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    .modal-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .notification-menu {
+        right: -60px;
+        max-width: 300px;
+    }
+}
+/* Posicionamento do botão de curtir */
+.tech-card {
+    position: relative; /* Necessário para o botão absoluto */
+}
+
+.btn-like {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #64748b; /* Cor cinza (var --text-light) */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.btn-like:hover {
+    transform: scale(1.2);
+    color: #ef4444; /* Vermelho ao passar o mouse */ 
+}
+
+/* Classe ativada via JavaScript quando clicado */
+.btn-like.liked {
+    color: #ef4444;
+    fill: #ef4444; /* Preenche o coração */
+}
+
+/* Telas muito pequenas (Smartphones menores) - até 480px */
+@media (max-width: 480px) {
+    /* Limpa a interface escondendo a busca */
+    .search-bar {
+        display: none; 
+    }
+
+    /* Centraliza os dados do técnico */
+    .tech-card-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Empilha os botões de ação do card */
+    .tech-actions {
+        flex-direction: column;
+    }
+
+    /* Ajuste final do menu de notificação para não vazar */
+    .notification-menu {
+        right: -80px;
+        width: 280px;
+    }
+}
