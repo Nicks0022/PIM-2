@@ -1,248 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechTrust | Meus Agendamentos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/dashboard.css">
-    <link rel="stylesheet" href="styles/agendamentos.css">
-</head>
-<body class="dashboard-body">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="estilos/agendamentos.css">
+  </head>
+  <body class="dashboard-body">
     <nav class="dash-navbar">
-        <div class="dash-nav-container">
-            <div class="logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
-                <div class="logo-icon">T</div>
-                <span class="logo-text">Tech<span>Trust</span></span>
-            </div>
-            <div class="user-menu">
-                <div class="user-profile" onclick="window.location.href='dashboard.html';">
-                    <span style="color: var(--primary-blue); font-size: 14px; font-weight: 600;">←Voltar</span>
-                </div>
-            </div>
+      <div class="dash-nav-container">
+        <div
+          class="logo"
+          onclick="window.location.href = 'index.html'"
+          style="cursor: pointer"
+        >
+          <div class="logo-icon">T</div>
+          <span class="logo-text">Tech<span>Trust</span></span>
         </div>
+        <div class="user-menu">
+          <div
+            class="user-profile"
+            onclick="window.location.href = 'dashboard.html'"
+          >
+            <span style="color: var(--primary-blue); font-weight: 600"
+              >←Voltar</span
+            >
+          </div>
+        </div>
+      </div>
     </nav>
 
     <main class="dash-main">
-        <header class="dash-header">
-            <div>
-                <h1>Meus Agendamentos</h1>
-                <p>Acompanhe o progresso dos seus reparos em tempo real.</p>
-            </div>
-            <div class="filters">
-                <button class="filter-btn active">Todos</button>
-                <button class="filter-btn">Em Aberto</button>
-                <button class="filter-btn">Concluídos</button>
-            </div>
-        </header>
-
-        <div class="appointments-list">
-            
-            <div class="appointment-card">
-                <div class="appointment-main">
-                    <div class="tech-brief">
-                        <img src="img/download (5).jpg" alt="Carlos Souza" class="mini-avatar">
-                        <div>
-                            <h4>Carlos Souza</h4>
-                            <span>Especialista Apple</span>
-                        </div>
-                    </div>
-                    <div class="service-info">
-                        <p class="label">Serviço</p>
-                        <p class="value">Troca de Tela - iPhone 13</p>
-                    </div>
-                    <div class="date-info">
-                        <p class="label">Data e Hora</p>
-                        <p class="value">18 Abr 2026 • 14:30</p>
-                    </div>
-                    <div class="status-box">
-                        <span class="status-badge progress">Em Andamento</span>
-                    </div>
-                </div>
-                <div class="appointment-actions">
-                    <button class="btn-outline btn-chat" onclick="window.location.href='agendar-reparo.html'">Abrir Chat</button>
-                    <button class="btn-primary">Ver Detalhes</button>
-                </div>
-            </div>
-
-            <div class="appointment-card">
-                <div class="appointment-main">
-                    <div class="tech-brief">
-                        <img src="img/download (8).jpg" alt="Mariana Rios" class="mini-avatar">
-                        <div>
-                            <h4>Mariana Rios</h4>
-                            <span>Técnica em Informática</span>
-                        </div>
-                    </div>
-                    <div class="service-info">
-                        <p class="label">Serviço</p>
-                        <p class="value">Limpeza e Pasta Térmica - MacBook Air</p>
-                    </div>
-                    <div class="date-info">
-                        <p class="label">Data e Hora</p>
-                        <p class="value">20 Abr 2026 • 09:00</p>
-                    </div>
-                    <div class="status-box">
-                        <span class="status-badge pending">Aguardando Aprovação</span>
-                    </div>
-                </div>
-                <div class="appointment-actions">
-                    <button class="btn-outline btn-chat">Abrir Chat</button>
-                    <button class="btn-outline-danger">Cancelar</button>
-                </div>
-            </div>
-
-            <div class="appointment-card done">
-                <div class="appointment-main">
-                    <div class="tech-brief">
-                        <img src="img/Older Men.jpg" alt="Lucas Mendes" class="mini-avatar">
-                        <div>
-                            <h4>Lucas Mendes</h4>
-                            <span>Especialista em Telas</span>
-                        </div>
-                    </div>
-                    <div class="service-info">
-                        <p class="label">Serviço</p>
-                        <p class="value">Reparo de Carcaça - Dell G15</p>
-                    </div>
-                    <div class="date-info">
-                        <p class="label">Data e Hora</p>
-                        <p class="value">12 Abr 2026 • 11:15</p>
-                    </div>
-                    <div class="status-box">
-                        <span class="status-badge completed">Concluído</span>
-                    </div>
-                </div>
-                <div class="appointment-actions">
-                    <button class="btn-primary btn-avaliar" data-tech="Lucas Mendes">Avaliar Técnico</button>
-
-<div id="modal-avaliacao" class="modal-overlay">
-    <div class="modal-content evaluation-modal">
-        <button class="close-modal" id="close-eval">&times;</button>
-        
-        <div class="eval-header">
-            <h2>Avaliar Serviço</h2>
-            <p>Sua opinião é muito importante para nós. Como foi o atendimento de <strong id="eval-tech-name">Lucas Mendes</strong>?</p>
+      <header class="dash-header">
+        <div>
+          <h1>Meus Agendamentos</h1>
+          <p>Acompanhe o progresso dos seus reparos.</p>
         </div>
-        
-        <form id="form-avaliacao">
-            <div class="rating-container">
-                <div class="rating-stars">
-                    <input type="radio" name="star" id="star5" value="5"><label for="star5">★</label>
-                    <input type="radio" name="star" id="star4" value="4"><label for="star4">★</label>
-                    <input type="radio" name="star" id="star3" value="3"><label for="star3">★</label>
-                    <input type="radio" name="star" id="star2" value="2"><label for="star2">★</label>
-                    <input type="radio" name="star" id="star1" value="1"><label for="star1">★</label>
-                </div>
-                <p class="rating-label">Toque nas estrelas para avaliar</p>
-            </div>
-
-            <div class="form-group">
-                <label for="eval-comment">Conte-nos mais (opcional)</label>
-                <textarea id="eval-comment" class="form-input" placeholder="O que você achou da qualidade técnica e do prazo?"></textarea>
-            </div>
-
-            <div class="form-actions-eval">
-                <button type="button" class="btn-cancel" id="cancel-eval">Agora não</button>
-                <button type="submit" class="btn-primary-eval">Enviar Avaliação</button>
-            </div>
-        </form>
-    </div>
-</div>                </div>
-            </div>
-
+        <div class="filters">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="em-aberto">Em Aberto</button>
+          <button class="filter-btn" data-filter="concluidos">
+            Concluídos
+          </button>
         </div>
+      </header>
+
+      <div class="appointments-list">
+        <div class="appointment-card">
+          <div class="appointment-main">
+            <div class="tech-brief">
+              <img
+                src="img/download (5).jpg"
+                alt="Carlos"
+                class="mini-avatar"
+              />
+              <div>
+                <h4>Carlos Souza</h4>
+                <span>Especialista Apple</span>
+              </div>
+            </div>
+            <div class="service-info">
+              <p class="label">Serviço</p>
+              <p class="value">Troca de Tela - iPhone 13</p>
+            </div>
+            <div class="date-info">
+              <p class="label">Data</p>
+              <p class="value">18 Abr • 14:30</p>
+            </div>
+            <div class="status-box">
+              <span class="status-badge progress">Em Andamento</span>
+            </div>
+          </div>
+          <div class="appointment-actions">
+            <button class="btn-outline btn-chat">Abrir Chat</button>
+            <button class="btn-primary btn-detalhes">Ver Detalhes</button>
+          </div>
+        </div>
+
+        <div class="appointment-card">
+          <div class="appointment-main">
+            <div class="tech-brief">
+              <img
+                src="img/download (8).jpg"
+                alt="Mariana"
+                class="mini-avatar"
+              />
+              <div>
+                <h4>Mariana Rios</h4>
+                <span>Informática</span>
+              </div>
+            </div>
+            <div class="service-info">
+              <p class="label">Serviço</p>
+              <p class="value">Limpeza - MacBook Air</p>
+            </div>
+            <div class="date-info">
+              <p class="label">Data</p>
+              <p class="value">20 Abr • 09:00</p>
+            </div>
+            <div class="status-box">
+              <span class="status-badge pending">Pendente</span>
+            </div>
+          </div>
+          <div class="appointment-actions">
+            <button class="btn-outline btn-chat">Abrir Chat</button>
+            <button class="btn-outline-danger">Cancelar</button>
+          </div>
+        </div>
+
+        <div class="appointment-card done">
+          <div class="appointment-main">
+            <div class="tech-brief">
+              <img src="img/Older Men.jpg" alt="Lucas" class="mini-avatar" />
+              <div>
+                <h4>Lucas Mendes</h4>
+                <span>Telas</span>
+              </div>
+            </div>
+            <div class="service-info">
+              <p class="label">Serviço</p>
+              <p class="value">Reparo - Dell G15</p>
+            </div>
+            <div class="date-info">
+              <p class="label">Data</p>
+              <p class="value">12 Abr • 11:15</p>
+            </div>
+            <div class="status-box">
+              <span class="status-badge completed">Concluído</span>
+            </div>
+          </div>
+          <div class="appointment-actions">
+            <button class="btn-primary btn-avaliar" data-tech="Lucas Mendes">
+              Avaliar Técnico
+            </button>
+            <div id="modal-avaliacao" class="modal-overlay">
+            <div class="modal-content evaluation-modal">
+                <button class="close-modal" id="close-eval">&times;</button>
+                
+                <div class="eval-header">
+                    <h2>Avaliar Serviço</h2>
+                    <p>Sua opinião é muito importante para nós. Como foi o atendimento de <strong id="eval-tech-name">Lucas Mendes</strong>?</p>
+                </div>
+                
+                <form id="form-avaliacao">
+                    <div class="rating-container">
+                        <div class="rating-stars">
+                            <input type="radio" name="star" id="star5" value="5"><label for="star5">★</label>
+                            <input type="radio" name="star" id="star4" value="4"><label for="star4">★</label>
+                            <input type="radio" name="star" id="star3" value="3"><label for="star3">★</label>
+                            <input type="radio" name="star" id="star2" value="2"><label for="star2">★</label>
+                            <input type="radio" name="star" id="star1" value="1"><label for="star1">★</label>
+                        </div>
+                        <p class="rating-label">Toque nas estrelas para avaliar</p>
+                    </div>
+
+                    <div style="text-align:left; margin-top: 15px;">
+                        <label for="eval-comment" style="font-size: 14px; font-weight: 600; display:block; margin-bottom: 5px;">Conte-nos mais (opcional)</label>
+                        <textarea id="eval-comment" placeholder="O que você achou da qualidade técnica e do prazo?" style="width: 100%; min-height: 100px; padding: 15px; border-radius: 12px; border: 1.5px solid var(--border-light); background: var(--bg-gray); resize: none; font-size: 14px;"></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; margin-top: 30px;">
+                        <button type="button" id="cancel-eval" style="flex: 1; background: var(--white); border: 1.5px solid var(--border-light); color: var(--text-light); padding: 14px; border-radius: 10px; font-weight: 600; cursor: pointer;">Agora não</button>
+                        <button type="submit" style="flex: 2; background: var(--primary-blue); color: var(--white); border: none; padding: 14px; border-radius: 10px; font-weight: 700; cursor: pointer;">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      <div id="modal-detalhes" class="modal-overlay">
+        <div class="modal-content">
+          <button class="close-modal" id="close-detalhes">&times;</button>
+          <h2>Detalhes do Serviço</h2>
+          <div style="margin-top: 20px; text-align: left">
+            <div
+              style="
+                padding: 10px;
+                background: #f0f9ff;
+                border-radius: 8px;
+                margin-bottom: 10px;
+              "
+            >
+              <h4 style="color: var(--primary-blue)">✓ Feito</h4>
+              <p style="font-size: 13px">Diagnóstico inicial concluído.</p>
+            </div>
+            <div style="padding: 10px; background: #ecfdf5; border-radius: 8px">
+              <h4 style="color: var(--success-green)">⚙ Sendo feito</h4>
+              <p style="font-size: 13px">
+                Substituição de componentes internos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>© 2026 TechTrust. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-    <script>
-        // ==========================================
-// LÓGICA DE AVALIAÇÃO DE TÉCNICO
-// ==========================================
-const modalEval = document.getElementById('modal-avaliacao');
-const btnAvaliar = document.querySelectorAll('.btn-avaliar');
-const btnCloseEval = document.getElementById('close-eval');
-const btnCancelEval = document.getElementById('cancel-eval');
-const formAvaliacao = document.getElementById('form-avaliacao');
-
-// Abrir modal ao clicar em Avaliar
-btnAvaliar.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const techName = btn.getAttribute('data-tech');
-        document.getElementById('eval-tech-name').innerText = techName;
-        modalEval.classList.add('active');
-    });
-});
-
-// Fechar modal
-const fecharAvaliacao = () => {
-    modalEval.classList.remove('active');
-    formAvaliacao.reset();
-};
-
-if(btnCloseEval) btnCloseEval.onclick = fecharAvaliacao;
-if(btnCancelEval) btnCancelEval.onclick = fecharAvaliacao;
-
-// Enviar avaliação (Simulação)
-if(formAvaliacao) {
-    formAvaliacao.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const nota = document.querySelector('input[name="star"]:checked');
-        
-        if(!nota) {
-            alert('Por favor, selecione uma quantidade de estrelas.');
-            return;
-        }
-
-        alert(`Obrigado! Sua avaliação de ${nota.value} estrelas foi enviada com sucesso.`);
-        fecharAvaliacao();
-        
-        // Opcional: Desabilitar o botão após avaliar
-        // e.target.closest('.appointment-card').querySelector('.btn-avaliar').innerText = 'Avaliado';
-    });
-}
-
-// ==========================================
-// LÓGICA DE ABRIR CHAT DINÂMICO
-// ==========================================
-const chatBtns = document.querySelectorAll('.btn-chat');
-
-chatBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        // Encontra o card específico onde o botão foi clicado
-        const card = e.target.closest('.appointment-card');
-        
-        // Pega o nome e a imagem dentro desse card específico
-        const techName = card.querySelector('.tech-brief h4').innerText;
-        const techImg = card.querySelector('.mini-avatar').src;
-
-        // Salva os dados do técnico clicado para usar na tela de chat
-        localStorage.setItem('techName', techName);
-        localStorage.setItem('techImg', techImg);
-
-        // Redireciona para a tela de chat/agendamento
-        window.location.href = 'agendar-reparo.html';
-    });
-});
-    </script>
-        <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-        </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-    
-</body>
+    <script src="scripts/agendamentos.js"></script>
+  </body>
 </html>
