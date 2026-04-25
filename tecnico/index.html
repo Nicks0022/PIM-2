@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechTrust | Portal do Técnico</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Configurações Globais */
+      :root {
+        --primary-blue: #0ea5e9;
+        --dark-blue: #0284c7;
+        --text-main: #1e293b;
+        --text-light: #64748b;
+        --white: #ffffff;
+        --bg-gray: #f8fafc;
+        --bg-dark: #0f172a;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-gray);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      /* Navbar Fixa */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      /* Logo */
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-icon {
+        background: var(--primary-blue);
+        color: white;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--text-main);
+      }
+
+      .logo-text span {
+        color: var(--primary-blue);
+      }
+
+      /* Botões */
+      .btn-primary {
+        background: var(--primary-blue);
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          transform 0.2s;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-primary:hover {
+        background: var(--dark-blue);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--text-light);
+        border: 1px solid #cbd5e1;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .btn-outline:hover {
+        border-color: var(--text-main);
+        color: var(--text-main);
+      }
+
+      /* Layout Principal - CORREÇÃO 1: Afastamento do menu */
+      main {
+        padding-top: 120px; /* Dá espaço para a navbar fixa de 80px */
+        padding-bottom: 80px;
+      }
+
+      /* Cartões de Resumo */
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+      }
+
+      .summary-card {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(186, 19, 19, 0.03);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #f1f5f9;
+        margin-top: 30%;
+      }
+
+      .summary-card.highlight {
+        background: var(--bg-dark);
+        color: var(--white);
+        border: none;
+      }
+
+      .summary-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 15px;
+      }
+
+      .summary-card.highlight .summary-header {
+        color: #94a3b8;
+      }
+
+      .summary-value {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 5px;
+        color: var(--text-main);
+        line-height: 1.1;
+      }
+
+      .summary-card.highlight .summary-value {
+        color: var(--white);
+      }
+
+      .summary-subtitle {
+        font-size: 0.85rem;
+        color: var(--text-light);
+      }
+
+      /* Abas / Menu Interno - CORREÇÃO 3: Centralização */
+      .tabs {
+        display: flex;
+        justify-content: center; /* Centraliza os separadores */
+        gap: 40px; /* Aumenta o espaço entre eles para respirarem melhor */
+        margin-bottom: 40px;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 15px;
+      }
+
+      .tab {
+        color: var(--text-light);
+        font-weight: 600;
+        font-size: 1.05rem;
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: color 0.3s;
+        position: relative;
+      }
+
+      .tab.active,
+      .tab:hover {
+        color: var(--primary-blue);
+      }
+
+      .tab.active::after {
+        content: "";
+        position: absolute;
+        bottom: -16px; /* Ajustado para bater certo com a margem do border-bottom */
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--primary-blue);
+        border-radius: 3px 3px 0 0;
+      }
+
+      /* Quadro Kanban */
+      .kanban-board {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .kanban-column {
+        background: #f1f5f9;
+        border-radius: 16px;
+        padding: 20px;
+      }
+
+      .column-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        font-weight: 800;
+        color: var(--text-main);
+        font-size: 1.1rem;
+      }
+
+      .badge-count {
+        background: #e0f2fe;
+        color: var(--primary-blue);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 800;
+      }
+
+      /* Cartões de Tarefa */
+      .task-card {
+        background: var(--white);
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        border: 1px solid #e2e8f0;
+        margin-bottom: 15px;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s;
+      }
+
+      .task-card:hover {
+        transform: translateY(-2px);
+        border-color: #cbd5e1;
+      }
+
+      .task-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .task-name {
+        font-weight: 800;
+        color: var(--text-main);
+        font-size: 1.05rem;
+      }
+      .task-price {
+        color: var(--primary-blue);
+        font-weight: 800;
+        font-size: 1.05rem;
+      }
+
+      .task-details {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .task-details strong {
+        color: var(--text-main);
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn-group button,
+      .btn-group a {
+        flex: 1;
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+
+      .btn-block {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.95rem;
+      }
+
+      .status-text {
+        color: #10b981;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-content">
+        <div class="logo">
+          <div class="logo-icon">T</div>
+          <span class="logo-text">Tech<span>Trust</span></span>
+        </div>
+    <!-- <a href="#" class="btn-outline">Sair do Painel</a>  -->
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="summary-grid">
+        <div class="summary-card highlight">
+          <div class="summary-header">
+            <span>Ganhos Totais</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path
+                d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+              ></path>
+            </svg>
+          </div>
+          <div class="summary-value">R$ 75,00</div>
+          <div class="summary-subtitle">De 1 reparo concluído esta semana</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-header">
+            <span>Serviços Concluídos</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="summary-value">1</div>
+          <div class="summary-subtitle">Total de atendimentos finalizados</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-header">
+            <span>Avaliação Média</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="none"
+              stroke="#fbbf24"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+          </div>
+          <div class="summary-value">4.7</div>
+          <div class="summary-subtitle">
+            Baseado em 3 avaliações de clientes
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active">Reparos Ativos</div>
+        <div class="tab">Ganhos e Relatórios</div>
+        <div class="tab">Avaliações Recebidas</div>
+      </div>
+
+      <div class="kanban-board">
+        <div class="kanban-column">
+          <div class="column-header">
+            Novas Solicitações
+            <span class="badge-count">2</span>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <span class="task-name">John Smith</span>
+              <span class="task-price">R$ 89,99</span>
+            </div>
+            <div class="task-details">
+              <strong>iPhone 13</strong>
+              Troca de tela frontal
+            </div>
+            <div class="btn-group">
+              <button class="btn-primary">Aceitar</button>
+              <button class="btn-outline">Recusar</button>
+            </div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <span class="task-name">Emma Davis</span>
+              <span class="task-price">R$ 199,99</span>
+            </div>
+            <div class="task-details">
+              <strong>MacBook Pro 2021</strong>
+              Substituição de bateria
+            </div>
+            <div class="btn-group">
+              <button class="btn-primary">Aceitar</button>
+              <button class="btn-outline">Recusar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="kanban-column">
+          <div class="column-header">
+            Em Andamento
+            <span class="badge-count">2</span>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <span class="task-name">Michael Chen</span>
+              <span class="task-price">R$ 65,00</span>
+            </div>
+            <div class="task-details">
+              <strong>Samsung Galaxy S22</strong>
+              Reparo no conector de carga
+            </div>
+            <button class="btn-primary btn-block">Atualizar Status</button>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <span class="task-name">Sarah Johnson</span>
+              <span class="task-price">R$ 120,00</span>
+            </div>
+            <div class="task-details">
+              <strong>iPad Air</strong>
+              Avaliação de danos por água
+            </div>
+            <button class="btn-primary btn-block">Atualizar Status</button>
+          </div>
+        </div>
+
+        <div class="kanban-column">
+          <div class="column-header">
+            Concluídos
+            <span class="badge-count">1</span>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <span class="task-name">David Lee</span>
+              <span class="task-price">R$ 75,00</span>
+            </div>
+            <div class="task-details">
+              <strong>iPhone 12</strong>
+              Substituição do módulo de câmera
+            </div>
+            <div class="status-text">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Pagamento recebido
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

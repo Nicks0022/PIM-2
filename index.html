@@ -3,30 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechTrust | Assistência Técnica de Confiança</title>
+    <title>ClickTech | Assistência Técnica de Confiança</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="apple-touch-icon" sizes="180x180" href=" img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+    <link rel="manifest" href="img/site.webmanifest" />
     <link rel="stylesheet" href="estilos/style.css" />
   </head>
   <body>
     <nav class="navbar">
       <div class="container nav-content">
         <div class="logo">
-          <div class="logo-icon">T</div>
-          <span class="logo-text">Tech<span>Trust</span></span>
+          <div class="logo-icon">CT</div>
+          <span class="logo-text">Click<span>Tech</span></span>
         </div>
 
-        <ul class="nav-links">
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
           <li><a href="#" class="active">Home</a></li>
           <li><a href="#quem-somos">Quem Somos</a></li>
           <li><a href="#como-funciona">Como Funciona</a></li>
           <li><a href="#seja-tecnico">Seja um Técnico</a></li>
           <li><a href="#avaliacoes">Avaliações</a></li>
+          <li class="mobile-only">
+            <a
+              href="login.html"
+              class="btn-primary"
+              style="text-decoration: none"
+              >Entrar</a
+            >
+          </li>
         </ul>
 
-        <div class="nav-actions">
+        <div class="nav-actions desktop-only">
           <a
             href="login.html"
             class="btn-primary"
@@ -58,7 +76,7 @@
 
         <div class="hero-image">
           <div class="image-wrapper">
-            <img src="img/inicio.svg" alt="Técnico TechTrust" />
+            <img src="img/inicio.svg" alt="Técnico ClickTech" />
           </div>
         </div>
       </div>
@@ -67,7 +85,7 @@
     <section id="quem-somos" class="bg-dark text-white">
       <div class="container">
         <h2 class="section-title text-center text-white mb-5">
-          Porquê Escolher o TechTrust?
+          Porquê Escolher o ClickTech?
         </h2>
         <br />
 
@@ -235,7 +253,7 @@
             <div class="review-card">
               <div class="stars">★★★★★</div>
               <p>
-                "Consertar meus dispositivos antigos no TechTrust foi rápido e
+                "Consertar meus dispositivos antigos no ClickTech foi rápido e
                 seguro."
               </p>
               <span class="review-author">— Nicolly Lima</span>
@@ -246,7 +264,7 @@
                 "Adorei a ideia da plataforma. O conserto do meu celular ficou
                 perfeito e com garantia."
               </p>
-              <span class="review-author">— Nicolly Lima</span>
+              <span class="review-author">— George Silva</span>
             </div>
             <div class="review-card">
               <div class="stars">★★★★★</div>
@@ -254,15 +272,15 @@
                 "Consegui consertar meu notebook por um preço excelente. O
                 técnico foi super atencioso!"
               </p>
-              <span class="review-author">— Nicolly Lima</span>
+              <span class="review-author">— Camila Rocha</span>
             </div>
             <div class="review-card">
               <div class="stars">★★★★★</div>
               <p>
-                "Consertar meus dispositivos antigos no TechTrust foi rápido e
+                "Consertar meus dispositivos antigos no ClickTech foi rápido e
                 seguro."
               </p>
-              <span class="review-author">— Nicolly Lima</span>
+              <span class="review-author">— Fernando Pereira</span>
             </div>
             <div class="review-card">
               <div class="stars">★★★★☆</div>
@@ -270,7 +288,7 @@
                 "Adorei a ideia da plataforma. O conserto do meu celular ficou
                 perfeito e com garantia."
               </p>
-              <span class="review-author">— Nicolly Lima</span>
+              <span class="review-author">— Maria Silva</span>
             </div>
           </div>
         </div>
@@ -282,7 +300,7 @@
         <div class="footer-brand">
           <div class="logo">
             <div class="logo-icon">T</div>
-            <span class="logo-text text-white">Tech<span>Trust</span></span>
+            <span class="logo-text text-white">Click<span>Tech</span></span>
           </div>
           <p>
             Conectando você aos melhores técnicos da região com segurança e
@@ -354,7 +372,7 @@
       </div>
       <div class="footer-bottom">
         <div class="container">
-          <p>© 2026 TechTrust. Todos os direitos reservados.</p>
+          <p>© 2026 ClickTech. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
@@ -370,6 +388,6 @@
       new window.VLibras.Widget("https://vlibras.gov.br/app");
     </script>
 
-    <script src="scripts/"></script>
+    <script src="scripts/home.js"></script>
   </body>
 </html>
