@@ -1,4 +1,4 @@
-# TechTrust 🛠️
+# ClickTech 🛠️
 
 > **Projeto Integrado Multidisciplinar (PIM II)** > Marketplace de serviços técnicos focado em segurança, confiança e eficiência na conexão entre clientes e profissionais.
 
